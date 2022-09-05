@@ -252,6 +252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
   name: {fileID: 908202536}
+  explanation: 
+  price: 0
+  time: 0
 --- !u!114 &64560235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,6 +475,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
   name: {fileID: 981824321}
+  explanation: "\uC0C8\uCF64\uD55C \uC790\uBABD\uC73C\uB85C \uD53C\uBD80\uC758 \uD0C4\uB825\uC744
+    \uB192\uC5EC\uC694"
+  price: 200
+  time: 7
 --- !u!1 &98907277
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +699,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
   name: {fileID: 1818310607}
+  explanation: 
+  price: 0
+  time: 0
 --- !u!114 &217451697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,6 +840,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
   name: {fileID: 704407889}
+  explanation: 
+  price: 0
+  time: 0
 --- !u!114 &219665938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,6 +1214,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
   name: {fileID: 1595010173}
+  explanation: 
+  price: 0
+  time: 0
 --- !u!114 &367870154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1890,6 +1906,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
   name: {fileID: 210316097}
+  explanation: 
+  price: 0
+  time: 0
 --- !u!114 &706522029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2915,6 +2934,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
   name: {fileID: 1038300572}
+  explanation: 
+  price: 0
+  time: 0
 --- !u!114 &1212387637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3746,6 +3768,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
   name: {fileID: 931520120}
+  explanation: 
+  price: 0
+  time: 0
 --- !u!114 &1730645708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3964,6 +3989,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
   name: {fileID: 1954031310}
+  explanation: 
+  price: 0
+  time: 0
 --- !u!114 &1838624862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4186,6 +4214,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
   name: {fileID: 288438730}
+  explanation: 
+  price: 0
+  time: 0
 --- !u!114 &1946921855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4477,6 +4508,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
   name: {fileID: 301867328}
+  explanation: 
+  price: 0
+  time: 0
 --- !u!114 &2024484758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4799,6 +4833,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
   name: {fileID: 1726117620}
+  explanation: 
+  price: 0
+  time: 0
 --- !u!114 &2114317474
 MonoBehaviour:
   m_ObjectHideFlags: 0
