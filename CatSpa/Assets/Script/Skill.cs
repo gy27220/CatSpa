@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skill : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	#region public 변수
+	public Texture2D image;
+	public Text name; //string타입으로 바꿀지 고민. 일단 ㄱ
+	#endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
+	void Start()
+	{
+
+	}
+
+	void Update()
+	{
+		
+	}
 }
