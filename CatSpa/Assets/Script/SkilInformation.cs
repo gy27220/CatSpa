@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Skill : MonoBehaviour
+public class SkilInformation : MonoBehaviour
 {
 	//SkillInformation
 	//오브젝트가 갖는 기본적인 특징
