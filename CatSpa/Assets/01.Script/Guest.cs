@@ -11,17 +11,17 @@ public class Guest : MonoBehaviour
 
 
 	string favorite_Skill; //좋아하는 스킬?
-	int	   money;		   //소지금
+	int	   money;          //소지금
 
 
-	private void Awake()
+	private void OnEnable()
 	{
-		
+		StartCoroutine("Disable_Object");
 	}
 
 	void Start()
     {
-        
+		StartCoroutine("Disable_Object");   
     }
 
  
@@ -29,4 +29,10 @@ public class Guest : MonoBehaviour
     {
         
     }
+
+	IEnumerator Disable_Object()
+	{
+		yield return new WaitForSeconds(4f);
+		gameObject.SetActive(false);
+	}
 }
