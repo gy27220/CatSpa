@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
+  speed: 1
   check: 0
 --- !u!95 &1218626081270007600
 Animator:
