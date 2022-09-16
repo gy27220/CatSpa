@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Cat : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	#region public º¯¼ö
+	public string name;
+	public string introduce;
+	#endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	void Update()
+	{
+
+	}
+
 }
