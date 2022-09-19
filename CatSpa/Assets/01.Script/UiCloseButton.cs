@@ -8,6 +8,7 @@ public class UiCloseButton : MouseClick
 
 	public void ButtonClick()
 	{
+		
 		obj.SetActive(false);
 	}
 }
