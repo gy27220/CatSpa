@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1218626081270007614}
   - component: {fileID: 1218626081270007615}
-  - component: {fileID: 1218626081270007601}
-  - component: {fileID: 1218626081270007600}
-  - component: {fileID: 2321733324856287297}
   - component: {fileID: 4574339262583114613}
+  - component: {fileID: 1218626081270007600}
+  - component: {fileID: 1218626081270007601}
+  - component: {fileID: 2321733324856287297}
   m_Layer: 0
   m_Name: Guest_Bear
   m_TagString: Untagged
@@ -88,54 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1218626081270007601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1218626081270007612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 704ad4bf5e4219f4583a0534c4eacf42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &1218626081270007600
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1218626081270007612}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: d8367cebfef1f8b49a8ec022b5af77ce, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2321733324856287297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1218626081270007612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 408be1312e9447141bbcf3a832a5a2ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Bear
-  number: 0
-  speed: 1
-  check: 0
 --- !u!61 &4574339262583114613
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -162,3 +114,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.38416386, y: 0.33354998}
   m_EdgeRadius: 0
+--- !u!95 &1218626081270007600
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218626081270007612}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: d8367cebfef1f8b49a8ec022b5af77ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1218626081270007601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218626081270007612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704ad4bf5e4219f4583a0534c4eacf42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2321733324856287297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218626081270007612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408be1312e9447141bbcf3a832a5a2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Bear
+  number: 0
+  speed: 1
+  check: 0
