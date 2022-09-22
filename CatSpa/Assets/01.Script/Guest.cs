@@ -52,7 +52,8 @@ public class Guest : MonoBehaviour
 		rayPos = new Vector2(pos.x, pos.y - 0.3f);
 		//Debug.DrawRay(rayPos, Vector2.down * 0.4f, new Color(1, 0, 0));
 
-		Move();
+		//Move();
+
 	}
 
 	void Move()
@@ -60,8 +61,6 @@ public class Guest : MonoBehaviour
 		pos = Vector2.MoveTowards(pos, target, guestObj.Speed * Time.deltaTime);
 		transform.position = pos;
 	}
-
-
 
 	IEnumerator Disable_Object()
 	{
