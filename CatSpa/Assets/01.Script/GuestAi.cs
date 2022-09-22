@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ex : MonoBehaviour
+public class GuestAi : MonoBehaviour
 {
 	public GameObject bubbleUi;
 
