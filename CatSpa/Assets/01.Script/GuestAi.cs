@@ -12,11 +12,18 @@ public class GuestAi : MonoBehaviour
 
 	bool isWalk;
 
+	//
+	public GameObject selectOil;
+
+	GameObject oil;
+
 	void Start()
     {
 		isWalk = true;
 		pos = transform.position;
 		ani = GetComponent<Animator>();
+
+		oil = selectOil.GetComponent<RandomSelect>().Random_Select_Oil();
 	}
 
     void Update()
@@ -55,7 +62,8 @@ public class GuestAi : MonoBehaviour
 	void BubbleUi(bool setActive)
 	{
 		bubbleUi.transform.position = new Vector2(pos.x + 0.5f, pos.y + 0.5f);
+		oil.transform.position = new Vector2(pos.x + 0.52f, pos.y + 0.52f);
+		oil.SetActive(setActive);
 		bubbleUi.SetActive(setActive);
 	}
-
 }
