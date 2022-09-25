@@ -214,7 +214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &57994056
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleUi: {fileID: 161718500}
+  selectOil: {fileID: 2002692831}
 --- !u!95 &57994059
 Animator:
   serializedVersion: 4
@@ -371,7 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 908202536}
+  name: 
   explanation: 
   price: 0
   time: 0
@@ -594,7 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 981824321}
+  name: 
   explanation: "\uC0C8\uCF64\uD55C \uC790\uBABD\uC73C\uB85C \uD53C\uBD80\uC758 \uD0C4\uB825\uC744
     \uB192\uC5EC\uC694"
   price: 200
@@ -909,7 +910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 0}
+  name: 
   explanation: "\uC0C8\uCF64\uD55C \uC790\uBABD\uC73C\uB85C \uD53C\uBD80\uC758 \uD0C4\uB825\uC744
     \uB192\uC5EC\uC694"
   price: 200
@@ -1364,7 +1365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 1818310607}
+  name: 
   explanation: 
   price: 0
   time: 0
@@ -1505,7 +1506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 704407889}
+  name: 
   explanation: 
   price: 0
   time: 0
@@ -2196,7 +2197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 1595010173}
+  name: 
   explanation: 
   price: 0
   time: 0
@@ -3233,7 +3234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 0}
+  name: 
   explanation: "\uC0C8\uCF64\uD55C \uC790\uBABD\uC73C\uB85C \uD53C\uBD80\uC758 \uD0C4\uB825\uC744
     \uB192\uC5EC\uC694"
   price: 200
@@ -3577,7 +3578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 210316097}
+  name: 
   explanation: 
   price: 0
   time: 0
@@ -3929,7 +3930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 0}
+  name: 
   explanation: "\uC0C8\uCF64\uD55C \uC790\uBABD\uC73C\uB85C \uD53C\uBD80\uC758 \uD0C4\uB825\uC744
     \uB192\uC5EC\uC694"
   price: 200
@@ -6036,7 +6037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 1038300572}
+  name: 
   explanation: 
   price: 0
   time: 0
@@ -7297,7 +7298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 931520120}
+  name: 
   explanation: 
   price: 0
   time: 0
@@ -7562,7 +7563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 1954031310}
+  name: 
   explanation: 
   price: 0
   time: 0
@@ -8145,7 +8146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 288438730}
+  name: 
   explanation: 
   price: 0
   time: 0
@@ -8394,6 +8395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2002692832}
   - component: {fileID: 2002692833}
+  - component: {fileID: 2002692834}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -8434,6 +8436,23 @@ MonoBehaviour:
   - {fileID: 925932137}
   - {fileID: 1039422561}
   - {fileID: 1631156568}
+--- !u!114 &2002692834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002692831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ed2f4488e773b4c9be690f7f39c570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oil:
+  - {fileID: 7941083212884908881, guid: 1da17bcabc21a864c8d6e6f6da89331d, type: 3}
+  - {fileID: 650983900450750077, guid: 120d7b8e351945442a26a39a0e69ab4c, type: 3}
+  - {fileID: 9134876664363257269, guid: 652b072e904a58748a1578f8d31fd08c, type: 3}
+  oilMaxCount: 3
 --- !u!1 &2021932375
 GameObject:
   m_ObjectHideFlags: 0
@@ -8520,7 +8539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 301867328}
+  name: 
   explanation: 
   price: 0
   time: 0
@@ -8924,7 +8943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 0}
+  name: 
   explanation: "\uC0C8\uCF64\uD55C \uC790\uBABD\uC73C\uB85C \uD53C\uBD80\uC758 \uD0C4\uB825\uC744
     \uB192\uC5EC\uC694"
   price: 200
@@ -9115,7 +9134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: bccfe5e0a4a2c6b4fb24d10e39c01db0, type: 3}
-  name: {fileID: 1726117620}
+  name: 
   explanation: 
   price: 0
   time: 0
