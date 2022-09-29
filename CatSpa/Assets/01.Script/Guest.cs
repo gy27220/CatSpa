@@ -43,12 +43,11 @@ public class Guest : MonoBehaviour
 		guestObj = GetComponent<GuestInformation>();
 		pos = transform.position;
 
-		//target = new Vector2(pos.x, 1.4f);
-		//target = new Vector2(-1.5f, -1.4f);
+		target = new Vector2(pos.x, 1.4f);
 
-		StartCoroutine("Disable_Object");   
+		StartCoroutine("Disable_Object");
 
-    }
+	}
 
  
     void Update()
@@ -56,13 +55,7 @@ public class Guest : MonoBehaviour
 		rayPos = new Vector2(pos.x, pos.y - 0.3f);
 		//Debug.DrawRay(rayPos, Vector2.down * 0.4f, new Color(1, 0, 0));
 
-		if (CreateObj)
-			Move();
-
-		else
-		{
-			Debug.Log("마사지 받는 중 ");
-		}
+		Move();
 	}
 
 	void Move()
@@ -71,7 +64,7 @@ public class Guest : MonoBehaviour
 		transform.position = pos;
 	}
 
-	
+
 
 	IEnumerator Disable_Object()
 	{
@@ -80,12 +73,5 @@ public class Guest : MonoBehaviour
 		pos = new Vector2(-0.95f, 4.65f);
 		createObj = false;
 	}
-
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.gameObject.CompareTag("Mat"))
-		{
-			CreateObj = false;
-		}
-	}
 }
+

@@ -15,6 +15,8 @@ public class GuestCreate : MonoBehaviour
 	int listCountMin;  //리스트의 최소값
 	int listCountMax;  //리스트의 최대값
 
+	
+
 	void Start()
 	{
 		listCountMin = 0;
@@ -23,13 +25,22 @@ public class GuestCreate : MonoBehaviour
 		//오브젝트 풀링
 		for (int i = 0; i < listCountMax; ++i)
 		{
+
 			//종류별로 리스트 안에 넣는다.
-			guestList.Add(Instantiate(guestPrafeb[Random.Range(0, 2)]));
+			guestList.Add(Instantiate(guestPrafeb[Random.Range(0, 3)]));
+
+			if (i != 0)
+			{
+				guestList[i].GetComponent<SpriteRenderer>().sortingOrder =
+				  guestList[i - 1].GetComponent<SpriteRenderer>().sortingOrder - 1;
+			}
+
 			guestList[i].SetActive(false);
 		}
 
 		StartCoroutine("Enable_Object");
 	}
+
 
 	IEnumerator Enable_Object()
 	{
@@ -44,3 +55,5 @@ public class GuestCreate : MonoBehaviour
 		StartCoroutine("Enable_Object");
 	}
 }
+
+

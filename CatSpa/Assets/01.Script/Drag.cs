@@ -7,6 +7,19 @@ public class Drag : MonoBehaviour
 {
 	Vector2 difference = Vector2.zero; //마우스 위치 사이의 거리를 나타내는 벡터
 
+	bool isDrag; 
+	public bool DragCheck
+	{
+		get { return isDrag; }
+		set { isDrag = value; }
+	}
+
+	private void Start()
+	{
+		isDrag = false;
+	}
+
+
 	//마우스를 클릭했을 때
 	private void OnMouseDown()
 	{
@@ -16,29 +29,12 @@ public class Drag : MonoBehaviour
 
 	private void OnMouseDrag()
 	{
+		isDrag = true;
 		transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
 	}
+
+	private void OnMouseUp()
+	{
+		isDrag = false;
+	}
 }
-
-//public static Vector3 DefaultPos;
-
-
-//private void OnMouseDown()
-//{
-//	Debug.Log("마우스 클릭 ");
-//	DefaultPos = this.transform.position;
-//}
-
-//private void OnMouseUp()
-//{
-//	Debug.Log("마우스 뗌");
-//}
-
-//private void OnMouseDrag()
-//{
-//	Debug.Log("드래그중");
-
-//	DefaultPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
-//	this.transform.position = Camera.main.ScreenToWorldPoint(DefaultPos);
-
-//}
