@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 547935671297966925}
   - component: {fileID: 547935671297966926}
   - component: {fileID: 547935671297966931}
-  - component: {fileID: -5819316257452438126}
-  - component: {fileID: 547935671297966924}
+  - component: {fileID: 1995029958327950773}
+  - component: {fileID: 4755638370663418474}
   - component: {fileID: -5992979778269495430}
   - component: {fileID: -1039876972426391180}
-  m_Layer: 0
+  - component: {fileID: -7464137010884347829}
+  m_Layer: 6
   m_Name: Guest_Quokka
-  m_TagString: Untagged
+  m_TagString: Guest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547935671297966927}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.95, y: 4.62, z: 0}
+  m_LocalPosition: {x: -0.95, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: bce4bbf11c042704e9c8e50f820a55fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -110,8 +111,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &-5819316257452438126
-BoxCollider2D:
+--- !u!50 &1995029958327950773
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547935671297966927}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &4755638370663418474
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -120,34 +142,12 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.006716788, y: 0.25523543}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.65, y: 1.1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.38416386, y: 0.33354998}
-  m_EdgeRadius: 0
---- !u!114 &547935671297966924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547935671297966927}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 704ad4bf5e4219f4583a0534c4eacf42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Offset: {x: 0.0030655563, y: 0.0015330315}
+  m_Size: {x: 0.3373137, y: 0.86395264}
+  m_Direction: 0
 --- !u!114 &-5992979778269495430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,13 +171,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547935671297966927}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1f77d65a1d240440b2a3d6dfa683443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleUi: {fileID: 6896653909691546344}
-  selectOil: {fileID: 0}
+--- !u!114 &-7464137010884347829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547935671297966927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493f804523f60a1478583e96fc509677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6896653909691546344
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +200,7 @@ GameObject:
   - component: {fileID: 2494926750271629381}
   - component: {fileID: 6051217709809819807}
   - component: {fileID: 2274995956120745523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bubble_Ui
   m_TagString: Untagged
   m_Icon: {fileID: 0}
