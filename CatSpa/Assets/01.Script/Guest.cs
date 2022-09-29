@@ -13,6 +13,7 @@ public class Guest : MonoBehaviour
 	Vector2 rayPos;
 	bool createObj;
 
+
 	public Vector2 RayPos
 	{
 		get { return rayPos; }
@@ -33,6 +34,7 @@ public class Guest : MonoBehaviour
 
 	private void OnEnable()
 	{
+		createObj = true;
 		StartCoroutine("Disable_Object");
 	}
 
@@ -41,9 +43,11 @@ public class Guest : MonoBehaviour
 		guestObj = GetComponent<GuestInformation>();
 		pos = transform.position;
 
-		target = new Vector2(pos.x, 1.4f);
+		//target = new Vector2(pos.x, 1.4f);
+		//target = new Vector2(-1.5f, -1.4f);
 
 		StartCoroutine("Disable_Object");   
+
     }
 
  
@@ -52,8 +56,13 @@ public class Guest : MonoBehaviour
 		rayPos = new Vector2(pos.x, pos.y - 0.3f);
 		//Debug.DrawRay(rayPos, Vector2.down * 0.4f, new Color(1, 0, 0));
 
-		//Move();
+		if (CreateObj)
+			Move();
 
+		else
+		{
+			Debug.Log("마사지 받는 중 ");
+		}
 	}
 
 	void Move()
@@ -62,11 +71,21 @@ public class Guest : MonoBehaviour
 		transform.position = pos;
 	}
 
+	
+
 	IEnumerator Disable_Object()
 	{
 		yield return new WaitForSeconds(10f);
 		gameObject.SetActive(false);
 		pos = new Vector2(-0.95f, 4.65f);
 		createObj = false;
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.CompareTag("Mat"))
+		{
+			CreateObj = false;
+		}
 	}
 }
