@@ -13,6 +13,7 @@ public class Guest : MonoBehaviour
 	Vector2 rayPos;
 	bool createObj;
 
+
 	public Vector2 RayPos
 	{
 		get { return rayPos; }
@@ -33,6 +34,7 @@ public class Guest : MonoBehaviour
 
 	private void OnEnable()
 	{
+		createObj = true;
 		StartCoroutine("Disable_Object");
 	}
 
@@ -43,8 +45,9 @@ public class Guest : MonoBehaviour
 
 		target = new Vector2(pos.x, 1.4f);
 
-		StartCoroutine("Disable_Object");   
-    }
+		StartCoroutine("Disable_Object");
+
+	}
 
  
     void Update()
@@ -71,3 +74,4 @@ public class Guest : MonoBehaviour
 		createObj = false;
 	}
 }
+
