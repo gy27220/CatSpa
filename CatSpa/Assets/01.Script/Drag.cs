@@ -23,6 +23,7 @@ public class Drag : MonoBehaviour
 	//마우스를 클릭했을 때
 	private void OnMouseDown()
 	{
+		Debug.Log("클릭");
 		//마우스의 월드 위치 - 해당 객체의 위치
 		difference = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
 	}

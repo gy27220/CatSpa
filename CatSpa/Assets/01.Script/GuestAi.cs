@@ -11,11 +11,14 @@ public class GuestAi : MonoBehaviour
 	#endregion
 
 	//private
+
+
 	Animator ani;
 	SpriteRenderer spRender;
 	Vector2 pos;
 	bool isWalk;        //이동
 	bool isWaiting;     //대기
+	bool isMassage;		//마사지 받고 있는지
 
 	Drag isDrag;
 	//public GameObject selectOil;
@@ -24,9 +27,9 @@ public class GuestAi : MonoBehaviour
 	void Start()
 	{
 		pos = transform.position;
-
 		isWalk = true;
 		isWaiting = false;
+		isMassage = false;
 		ani = GetComponent<Animator>();
 		spRender = GetComponent<SpriteRenderer>();
 		isDrag = GetComponent<Drag>();
@@ -59,6 +62,7 @@ public class GuestAi : MonoBehaviour
 
 	void Massage()
 	{
+		isMassage = true;
 		ani.SetBool("Walk", true);
 		BubbleUi(true);
 	}
@@ -66,8 +70,8 @@ public class GuestAi : MonoBehaviour
 	void BubbleUi(bool setActive)
 	{
 		bubbleUi.transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y + 0.5f);
-		//oil.transform.position = new Vector2(pos.x + 0.52f, pos.y + 0.52f);
-		//oil.SetActive(setActive);
+		SkillManager.Instance.Skill_Select(new Vector2(transform.position.x + 0.52f, transform.position.y + 0.52f));
+
 		bubbleUi.SetActive(setActive);
 	}
 
