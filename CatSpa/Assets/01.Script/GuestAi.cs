@@ -21,8 +21,6 @@ public class GuestAi : MonoBehaviour
 	bool isMassage;		//마사지 받고 있는지
 
 	Drag isDrag;
-	//public GameObject selectOil;
-	//GameObject oil;
 
 	void Start()
 	{
@@ -33,7 +31,6 @@ public class GuestAi : MonoBehaviour
 		ani = GetComponent<Animator>();
 		spRender = GetComponent<SpriteRenderer>();
 		isDrag = GetComponent<Drag>();
-		//oil = selectOil.GetComponent<RandomSelect>().Random_Select_Oil();
 	}
 
 	void Update()
