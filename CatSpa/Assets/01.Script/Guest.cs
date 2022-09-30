@@ -13,6 +13,7 @@ public class Guest : MonoBehaviour
 	Vector2 rayPos;
 	bool createObj;
 
+
 	public Vector2 RayPos
 	{
 		get { return rayPos; }
@@ -33,6 +34,7 @@ public class Guest : MonoBehaviour
 
 	private void OnEnable()
 	{
+		createObj = true;
 		StartCoroutine("Disable_Object");
 	}
 
@@ -43,8 +45,9 @@ public class Guest : MonoBehaviour
 
 		target = new Vector2(pos.x, 1.4f);
 
-		StartCoroutine("Disable_Object");   
-    }
+		StartCoroutine("Disable_Object");
+
+	}
 
  
     void Update()
@@ -52,8 +55,7 @@ public class Guest : MonoBehaviour
 		rayPos = new Vector2(pos.x, pos.y - 0.3f);
 		//Debug.DrawRay(rayPos, Vector2.down * 0.4f, new Color(1, 0, 0));
 
-		//Move();
-
+		Move();
 	}
 
 	void Move()
@@ -61,6 +63,8 @@ public class Guest : MonoBehaviour
 		pos = Vector2.MoveTowards(pos, target, guestObj.Speed * Time.deltaTime);
 		transform.position = pos;
 	}
+
+
 
 	IEnumerator Disable_Object()
 	{
@@ -70,3 +74,4 @@ public class Guest : MonoBehaviour
 		createObj = false;
 	}
 }
+
