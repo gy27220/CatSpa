@@ -30,25 +30,73 @@ public class Cat : MonoBehaviour
 
 	private Animator ani;
 
+
+	float workingTime; //일하는 시간
+	GameObject obj; //손님
+	public GameObject Obj
+	{
+		get { return obj; }
+		set { obj = value; }
+	}
+
+	//임시
+	//일을 하고있는지 안하고있는지 체크
+	public bool work;
+	public bool Work
+	{
+		get { return work; }
+		set { work = value; }
+	}
+
 	public void Start()
 	{
+		work = false;
+		workingTime = 0;
 		ani = GetComponent<Animator>();
 	}
 
 
 	void Update()
 	{
-		//임시 
-		if(Input.GetKeyDown(KeyCode.Alpha1))
+		if (obj == null)
+			return;
+		else
+			work = true;
+
+
+		Working();
+
+		Debug.Log(workingTime);
+	}
+
+	void Working()
+	{
+		if (work && workingTime == 0)
 		{
-			Debug.Log("일하기");
-			ani.SetBool("Working", true);
+			workingTime = obj.GetComponent<GuestAi>().Oil.GetComponent<SkillInformation>().Time;
 		}
 
-		else if(Input.GetKeyDown(KeyCode.Alpha2))
+		//오일 서비스시간까지
+		if (workingTime > 0)
 		{
-			Debug.Log("휴식");
-			ani.SetBool("Working", false);
+			//손님 위치로 이동한다.
+			transform.position = new Vector2(obj.transform.position.x, obj.transform.position.y);
+
+			ani.SetBool("Working", true);
+			workingTime -= Time.deltaTime;
 		}
+		else
+		{
+			work = false;
+			this.gameObject.SetActive(false);
+			transform.position = new Vector2(-10f, -10f);
+			workingTime = 0;
+		}
+	}
+
+	void Resting()
+	{
+		Debug.Log("휴식");
+		ani.SetBool("Working", false);
 	}
 }

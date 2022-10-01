@@ -17,12 +17,21 @@ public class GuestAi : MonoBehaviour
 	SpriteRenderer spRender;
 	Vector2 pos;
 	bool isWalk;        //이동
+	bool isMassage;     //마사지 받고 있는지
 	bool isWaiting;     //대기
-	bool isMassage;		//마사지 받고 있는지
+	public bool Wait
+	{
+		get { return isWaiting; }
+		set { isWaiting = value; }
+	}
 
 	Drag isDrag;
-	//public GameObject selectOil;
-	//GameObject oil;
+	GameObject oil; //선택한 오일의 정보
+	public GameObject Oil
+	{
+		//직원에게 전달해주기위함
+		get { return oil; }
+	}
 
 	void Start()
 	{
@@ -33,7 +42,6 @@ public class GuestAi : MonoBehaviour
 		ani = GetComponent<Animator>();
 		spRender = GetComponent<SpriteRenderer>();
 		isDrag = GetComponent<Drag>();
-		//oil = selectOil.GetComponent<RandomSelect>().Random_Select_Oil();
 	}
 
 	void Update()
@@ -42,7 +50,6 @@ public class GuestAi : MonoBehaviour
 		if(isWalk && !isDrag.DragCheck && !isWaiting)
 			Move(target.transform.position);
 
-
 		if(isDrag.DragCheck)
 			spRender.sortingOrder = 3;
 	}
@@ -50,46 +57,46 @@ public class GuestAi : MonoBehaviour
 	void Move(Vector2 target)
 	{
 		pos = Vector2.MoveTowards(pos, target, Speed * Time.deltaTime);
-
 		transform.position = pos;
-	}
-
-	void MassageEnd()
-	{
-		BubbleUi(false);
-		ani.SetBool("Walk", false);
-	}
-
-	void Massage()
-	{
-		isMassage = true;
-		ani.SetBool("Walk", true);
-		BubbleUi(true);
 	}
 
 	void BubbleUi(bool setActive)
 	{
 		bubbleUi.transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y + 0.5f);
-		SkillManager.Instance.Skill_Select(new Vector2(transform.position.x + 0.52f, transform.position.y + 0.52f));
-
+		oil = SkillManager.Instance.Skill_Random_Instantiate();
+		SkillManager.Instance.Skill_Select(transform.position);
 		bubbleUi.SetActive(setActive);
 	}
 
+	//마사지 받을 준비
 	void LayDown()
 	{
-		Massage();
+		ani.SetBool("Walk", true);
+
+		//마사지를 시작하면
+		if (!isMassage)
+			BubbleUi(true);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		//누웠는지 체크
 		if (collision.gameObject.CompareTag("Mat"))
 		{
+			Vector2 matPos = collision.gameObject.transform.position;
+
+			transform.position = new Vector2(matPos.x, matPos.y);
+
 			isWaiting = true;
 			Invoke("LayDown", 0.5f);
 		}
 
+		//손님끼리 충돌했으면 멈추고 줄서라
 		else if (collision.gameObject.tag == "Guest")
 			isWalk = false;
+	
+		else if (collision.gameObject.tag == "Cat")
+			isMassage = true;
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)

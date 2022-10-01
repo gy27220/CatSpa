@@ -39,7 +39,7 @@ public class SkillManager : MonoBehaviour
 	{
 		GameObject obj = Skill_Random_Instantiate();
 
-		obj.transform.position = new Vector2(pos.x, pos.y);
+		obj.transform.position = new Vector2(pos.x +0.52f, pos.y + 0.52f);
 		obj.SetActive(true);
 		return obj;
 	}
