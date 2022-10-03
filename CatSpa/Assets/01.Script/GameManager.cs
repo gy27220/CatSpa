@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
 
 					return guestObj;
 				}
+				else
+					onEnableCat = false;
 			}
 		}
 		return guestObj;
