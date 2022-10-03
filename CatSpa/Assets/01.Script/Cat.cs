@@ -65,8 +65,6 @@ public class Cat : MonoBehaviour
 
 
 		Working();
-
-		Debug.Log(workingTime);
 	}
 
 	void Working()
