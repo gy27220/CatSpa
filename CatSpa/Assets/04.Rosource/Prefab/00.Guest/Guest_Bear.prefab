@@ -188,8 +188,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 76234029578213431, guid: 174973282ac5cef468f6acfcad2db53d, type: 3}
   bubbleUi: {fileID: 7561044160054161328}
+  goldPrafeb: {fileID: 8202176094171396756, guid: fb8d366d297adf04986d270f0f23f1e0, type: 3}
   Speed: 2
-  isWaiting: 0
 --- !u!114 &7561044158280754256
 MonoBehaviour:
   m_ObjectHideFlags: 0
