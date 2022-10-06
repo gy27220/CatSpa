@@ -19,4 +19,8 @@ public class SkillInformation : MonoBehaviour
 		get { return time; }
 	}
 
+	public int Price
+	{
+		get { return price; }
+	}
 }
