@@ -12,15 +12,17 @@ public class GameManager : MonoBehaviour
 
 	bool onEnableCat;
 
+	int catCount;
 
 	private void Start()
 	{
+		catCount = 0;
 		onEnableCat = false;
 	}
 
 	private void Update()
 	{
-		catCheck();
+		Cat_Work_Check();
 	}
 
 	GameObject SitDownCheck()
@@ -28,7 +30,6 @@ public class GameManager : MonoBehaviour
 		//누워있고 클릭한 게스트의 정보를 넘겨준다.
 		for (int i = 0; i < guest.objectList.Count; ++i)
 		{
-			//손님이 누워있고
 			if (guest.objectList[i].GetComponent<GuestAi>().Wait)
 			{
 				//누워있는 사람중 클릭한 사람만
@@ -47,18 +48,25 @@ public class GameManager : MonoBehaviour
 		return guestObj;
 	}
 
-
-	void catCheck()
+	void Cat_Work_Check()
 	{
-		for (int i = 0; i < cat.objectList.Count; ++i)
-		{
-			if (!cat.objectList[i].GetComponent<Cat>().Work)
-			{
-				if(onEnableCat)
-				cat.objectList[i].SetActive(true);
+		if (catCount >= cat.objectList.Count)
+			catCount = 0;
 
-				cat.objectList[i].GetComponent<Cat>().Obj = SitDownCheck();
+		for (; catCount < cat.objectList.Count;)
+		{
+			if (!cat.objectList[catCount].GetComponent<Cat>().Work)
+			{
+				catObj = cat.objectList[catCount];
+				catObj.GetComponent<Cat>().Obj = SitDownCheck();
+
+				if (onEnableCat)
+					catObj.SetActive(true);
 			}
+			else
+				++catCount;
+
+			return;
 		}
 	}
 }

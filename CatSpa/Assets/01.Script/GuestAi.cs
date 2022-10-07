@@ -91,7 +91,7 @@ public class GuestAi : MonoBehaviour
 	{
 		gold.transform.position = new Vector2(matPos.x, matPos.y - 0.7f);
 		gold.GetComponent<Gold>().gold = price;
-		Debug.Log(gold.GetComponent<Gold>().gold);
+		//Debug.Log(gold.GetComponent<Gold>().gold);
 		gold.SetActive(true);
 	}
 

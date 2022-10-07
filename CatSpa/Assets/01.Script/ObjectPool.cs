@@ -7,6 +7,7 @@ public class ObjectPool : MonoBehaviour
 	#region enum 
 	public enum CREATE_TYPE { CT_GUEST, CT_CAT, CT_END };
 	public CREATE_TYPE type;
+	public int createCount;
 	#endregion
 
 	#region public 변수
@@ -18,14 +19,11 @@ public class ObjectPool : MonoBehaviour
 
 
 	//private
-	int listCountMin;  //리스트의 최소값
-	int listCountMax;  //리스트의 최대값
+	int createCountMin;  //리스트의 최소값
 
 	private void Start()
 	{
-		listCountMin = 0;
-		listCountMax = objectPrefab.Length;
-
+		createCountMin = 0;
 		ObjectCreate();
 	}
 
@@ -34,9 +32,9 @@ public class ObjectPool : MonoBehaviour
 		switch (type)
 		{
 			case CREATE_TYPE.CT_GUEST:
-				for (int i = 0; i < objectPrefab.Length; ++i)
+				for (int i = 0; i < createCount; ++i)
 				{
-					objectList.Add(Instantiate(objectPrefab[Random.Range(0, 3)]));
+					objectList.Add(Instantiate(objectPrefab[Random.Range(0, objectPrefab.Length)]));
 					objectList[i].SetActive(false);
 					LayerSort(i);
 				}
@@ -45,7 +43,7 @@ public class ObjectPool : MonoBehaviour
 				break;
 
 			case CREATE_TYPE.CT_CAT:
-				for (int i = 0; i < objectPrefab.Length; ++i)
+				for (int i = 0; i < createCount; ++i)
 					objectList.Add(Instantiate(objectPrefab[i]));
 				break;
 		}
@@ -66,10 +64,10 @@ public class ObjectPool : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1f);
 
-		objectList[listCountMin++].SetActive(true);
+		objectList[createCountMin++].SetActive(true);
 
-		if (listCountMin == listCountMax)
-			listCountMin = 0;
+		if (createCountMin == createCount)
+			createCountMin = 0;
 
 		//재귀로 계속 초마다 호출
 		StartCoroutine("Enable_Object");
