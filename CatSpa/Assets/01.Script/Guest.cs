@@ -4,74 +4,97 @@ using UnityEngine;
 
 public class Guest : MonoBehaviour
 {
-	GuestInformation guestObj;
+	public enum STATE { IDLE, MOVE, LAYDOWN, GETUP, LEAVE };
 
-	string favorite_Skill; //좋아하는 스킬?
-	int	   money;          //소지금
+	#region public 변수
+	public GameObject target;
+	public GameObject bubbleUi;
+	public float speed = 2f;
+	#endregion
+
+	//private
+	Animator ani;
+	SpriteRenderer spRender;
 	Vector2 pos;
-	Vector2 target; //목표 지점
-	Vector2 rayPos;
-	bool createObj;
+	STATE state = STATE.MOVE;
 
-
-	public Vector2 RayPos
+	bool isWalk;        //이동
+	bool isMassage;     //마사지 받고 있는지
+	bool isWaiting;     //대기
+	public bool Wait
 	{
-		get { return rayPos; }
+		get { return isWaiting; }
+		set { isWaiting = value; }
 	}
 
-	public bool CreateObj
+	Drag isDrag;
+	GameObject oil; //선택한 오일의 정보
+	public GameObject Oil
 	{
-		get { return createObj; }
-		set { createObj = value; }
+		get { return oil; }
+	}
+
+	private void Start()
+	{
+		oil = SkillManager.Instance.Skill_Random_Instantiate();
+		pos = transform.position;
+		isWalk = true;
+		isWaiting = false;
+		isMassage = false;
+		ani = GetComponent<Animator>();
+		spRender = GetComponent<SpriteRenderer>();
+		isDrag = GetComponent<Drag>();
 	}
 
 
-	public Vector2 Target
+	private void Update()
 	{
-		get { return target; }
-		set { target = value; }
+
+
+		switch(state)
+		{
+			case STATE.IDLE:
+				//다른 손님을 마주쳤을 때 대기 (줄서기)
+				break;
+
+			case STATE.LAYDOWN:
+				//자리에 눕기
+				break;
+
+			case STATE.GETUP:
+				//일어나기 
+				break;
+
+			case STATE.LEAVE:
+				//나가기
+				break;
+		}
 	}
 
-	private void OnEnable()
+
+	void Move(Vector2 pos)
 	{
-		createObj = true;
+		transform.position = Vector2.MoveTowards(pos, pos, speed * Time.deltaTime);
+	}
+}
+
+/*
+ private void OnEnable()
+	{	
 		StartCoroutine("Disable_Object");
 	}
 
 	void Start()
-    {
-		guestObj = GetComponent<GuestInformation>();
-		pos = transform.position;
-
-		target = new Vector2(pos.x, 1.4f);
-
+    {	
 		StartCoroutine("Disable_Object");
-
 	}
-
- 
-    void Update()
-    {
-		rayPos = new Vector2(pos.x, pos.y - 0.3f);
-		//Debug.DrawRay(rayPos, Vector2.down * 0.4f, new Color(1, 0, 0));
-
-		Move();
-	}
-
-	void Move()
-	{
-		pos = Vector2.MoveTowards(pos, target, guestObj.Speed * Time.deltaTime);
-		transform.position = pos;
-	}
-
 
 
 	IEnumerator Disable_Object()
 	{
 		yield return new WaitForSeconds(10f);
-		gameObject.SetActive(false);
-		pos = new Vector2(-0.95f, 4.65f);
-		createObj = false;
+	
 	}
-}
-
+	 
+	 
+	 */

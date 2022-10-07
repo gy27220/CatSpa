@@ -27,8 +27,17 @@ public class Drag : MonoBehaviour
 	{
 		isDrag = false;
 		isClick = false;
+		isMoneyClick = false;
 
 		guest = GetComponent<GuestAi>();
+	}
+
+	//임시
+	bool isMoneyClick;
+	public bool MoneyClick
+	{
+		get { return isMoneyClick; }
+		set { isMoneyClick = value; }
 	}
 
 	////마우스를 클릭했을 때 객체의 정보를 구한다.
@@ -61,6 +70,10 @@ public class Drag : MonoBehaviour
 		{
 			case "Guest":
 				isClick = true;
+				break;
+
+			case "Money":
+				isMoneyClick = true;
 				break;
 		}
 	}

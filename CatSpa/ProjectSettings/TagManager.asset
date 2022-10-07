@@ -8,6 +8,7 @@ TagManager:
   - Mat
   - Cat
   - BubbleUi
+  - Money
   layers:
   - Default
   - TransparentFX
